@@ -1,10 +1,4 @@
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\CoverletSourceRootsMapping_BugTests
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.csproj.AssemblyReference.cache
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.AssemblyInfoInputs.cache
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.AssemblyInfo.cs
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.csproj.CoreCompileInputs.cache
-C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.sourcelink.json
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\testhost.dll
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\BugPro.deps.json
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\BugPro.runtimeconfig.json
@@ -111,6 +105,12 @@ C:\ST\ST-4\BugTests\bin\Debug\net8.0\BugPro.dll
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\BugPro.pdb
 C:\ST\ST-4\BugTests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.csproj.AssemblyReference.cache
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.AssemblyInfoInputs.cache
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.AssemblyInfo.cs
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.csproj.CoreCompileInputs.cache
+C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.sourcelink.json
 C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.csproj.Up2Date
 C:\ST\ST-4\BugTests\obj\Debug\net8.0\BugTests.dll
 C:\ST\ST-4\BugTests\obj\Debug\net8.0\refint\BugTests.dll
