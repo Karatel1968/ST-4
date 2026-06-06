@@ -97,7 +97,6 @@ namespace BugTests
             Assert.AreEqual(Bug.State.InProgress, bug.CurrentState);
         }
 
-        // ❗ Тесты на исключения Stateless
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
@@ -123,8 +122,6 @@ namespace BugTests
             var bug = new Bug();
             bug.Fire(Bug.Trigger.Reopen);
         }
-
-        // Дополнительные тесты (добиваем до 20+)
 
         [TestMethod]
         public void Mark_As_Duplicate()
@@ -173,6 +170,57 @@ namespace BugTests
             bug.Fire(Bug.Trigger.Close);
 
             Assert.AreEqual(Bug.State.Closed, bug.CurrentState);
+        }
+
+        [TestMethod]
+        public void Cannot_StartFix_Without_Triage()
+        {
+            var bug = new Bug();
+            Assert.ThrowsException<InvalidOperationException>(() => bug.Fire(Bug.Trigger.StartFix));
+        }
+
+        [TestMethod]
+        public void Cannot_RequestInfo_Without_Triage()
+        {
+            var bug = new Bug();
+            Assert.ThrowsException<InvalidOperationException>(() => bug.Fire(Bug.Trigger.RequestInfo));
+        }
+
+        [TestMethod]
+        public void Cannot_RequestInfo_When_Already_InProgress()
+        {
+            var bug = new Bug();
+            bug.Fire(Bug.Trigger.Triage);
+            bug.Fire(Bug.Trigger.StartFix);
+            Assert.ThrowsException<InvalidOperationException>(() => bug.Fire(Bug.Trigger.RequestInfo));
+        }
+
+        [TestMethod]
+        public void Cannot_Resolve_When_Already_Reopened()
+        {
+            var bug = new Bug();
+            bug.Fire(Bug.Trigger.Triage);
+            bug.Fire(Bug.Trigger.StartFix);
+            bug.Fire(Bug.Trigger.Resolve);
+            bug.Fire(Bug.Trigger.Close);
+            bug.Fire(Bug.Trigger.Reopen);
+            bug.Fire(Bug.Trigger.StartFix);
+            bug.Fire(Bug.Trigger.Resolve);
+            Assert.AreEqual(Bug.State.Fixed, bug.CurrentState);
+        }
+
+        [TestMethod]
+        public void Reopened_Again_Still_Needs_StartFix()
+        {
+            var bug = new Bug();
+            bug.Fire(Bug.Trigger.Triage);
+            bug.Fire(Bug.Trigger.StartFix);
+            bug.Fire(Bug.Trigger.Resolve);
+            bug.Fire(Bug.Trigger.Close);
+            bug.Fire(Bug.Trigger.Reopen);
+            Assert.AreEqual(Bug.State.Reopened, bug.CurrentState);
+
+            Assert.ThrowsException<InvalidOperationException>(() => bug.Fire(Bug.Trigger.Reopen));
         }
     }
 }
